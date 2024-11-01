@@ -8,7 +8,7 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 app.get('/', (req, res) => {
   res.render("index", {
-    name: "Unge Strandman"
+    name: "Strandman"
   })
 })
 
