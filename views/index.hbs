@@ -1,6 +1,6 @@
 <h1>Søk etter Summoner</h1>
 
-<form action="/search" method="GET">
+<form onsubmit="handleSearch(event)">
     <div>
         <label for="summonerName">Summoner Name:</label>
         <input type="text" id="summonerName" name="summonerName" required>
@@ -19,11 +19,20 @@
             <option value="EUNE">Europe Nordic & East</option>
             <option value="NA">North America</option>
             <option value="KR">Korea</option>
-            <option value="BR">Brazil</option>
-            <option value="JP">Japan</option>
-            <option value="OCE">Oceania</option>
         </select>
     </div>
 
-    <button type="submit">Søk</button>
+    <button type="submit">Search</button>
 </form>
+
+<script>
+function handleSearch(event) {
+    event.preventDefault();
+    
+    const region = document.getElementById('region').value;
+    const name = document.getElementById('summonerName').value;
+    const tag = document.getElementById('tag').value;
+    
+    window.location.href = `/summoner/${region}/${name}/${tag}`;
+}
+</script>

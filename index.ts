@@ -12,6 +12,18 @@ app.get('/', (req, res) => {
   })
 })
 
+
+app.get('/summoner/:region/:name/:tag', (req, res) => {
+  
+  const { region, name, tag } = req.params;
+  
+  res.render('summoner', {
+      region, 
+      name,   
+      tag     
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
