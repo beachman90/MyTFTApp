@@ -1,0 +1,23 @@
+<h1>TFT Player Data</h1>
+
+{{#if account}}
+  <h2>Account Info</h2>
+  <ul>
+    <li>Gamename: {{account.gameName}}</li>
+    <li>Tag Line: {{account.tagLine}}</li>
+    <li>PUUID: {{account.puuid}}</li>
+  </ul>
+{{/if}}
+
+{{#if matches}}
+  <h2>Recent Matches</h2>
+  <ul>
+    {{#each matches}}
+      <li>Match ID: {{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+{{#unless account}}
+  <p>No player data found</p>
+{{/unless}}

@@ -11,17 +11,6 @@
         <input type="text" id="tag" name="tag" required>
     </div>
 
-    <div>
-        <label for="region">Region:</label>
-        <select id="region" name="region" required>
-            <option value="">Velg region</option>
-            <option value="EUW">Europe West</option>
-            <option value="EUNE">Europe Nordic & East</option>
-            <option value="NA">North America</option>
-            <option value="KR">Korea</option>
-        </select>
-    </div>
-
     <button type="submit">Search</button>
 </form>
 
@@ -29,10 +18,9 @@
 function handleSearch(event) {
     event.preventDefault();
     
-    const region = document.getElementById('region').value;
     const name = document.getElementById('summonerName').value;
     const tag = document.getElementById('tag').value;
     
-    window.location.href = `/summoner/${region}/${name}/${tag}`;
+    window.location.href = `/summoner/${name}/${tag}`;
 }
 </script>

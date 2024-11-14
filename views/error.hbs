@@ -1,0 +1,41 @@
+<div class="error-container">
+    <h1>Oops! Noe gikk galt</h1>
+    <div class="error-message">
+        {{message}}
+    </div>
+    <div class="error-actions">
+        <a href="/" class="home-link">Gå tilbake til forsiden</a>
+    </div>
+</div>
+
+<style>
+    .error-container {
+        text-align: center;
+        padding: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .error-message {
+        background: #fff1f1;
+        border: 1px solid #ffa7a7;
+        border-radius: 4px;
+        padding: 1rem;
+        margin: 1rem 0;
+        color: #d63031;
+    }
+
+    .home-link {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #0984e3;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 1rem;
+    }
+
+    .home-link:hover {
+        background: #0870c0;
+    }
+</style> 

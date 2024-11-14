@@ -1,8 +1,71 @@
-<h1>Summoner Info</h1>
-<div>
-    <p>Region: {{region}}</p>
-    <p>Name: {{name}}</p>
-    <p>Tag: {{tag}}</p>
+<div class="container">
+    <h1>{{account.gameName}} #{{account.tagLine}}</h1>
+    
+    <div class="player-info">
+        <h2>Spillerinfo</h2>
+        <p>Region: EUW</p>
+        <p>PUUID: {{account.puuid}}</p>
+    </div>
+
+    <div class="match-history">
+        <h2>Siste 20 matcher</h2>
+        <div class="match-grid">
+            {{#each matches}}
+                <div class="match-card">
+                    <p>Match ID: {{this}}</p>
+                    <!-- Her kan du senere legge til mer matchinfo som plassering, composition, etc. -->
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <a href="/" class="back-button">← Tilbake til søk</a>
 </div>
 
-<a href="/">Tilbake til søk</a>
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .player-info {
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .match-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .match-card {
+        background: #f0f0f0;
+        padding: 15px;
+        border-radius: 8px;
+        transition: transform 0.2s;
+    }
+
+    .match-card:hover {
+        transform: translateY(-2px);
+        background: #e8e8e8;
+    }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .back-button:hover {
+        background: #0056b3;
+    }
+</style>
